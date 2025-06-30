@@ -1,0 +1,106 @@
+#!/bin/bash
+# aliases for all shells
+
+DEFAULTBANK=~/UbuntuStudio/SoundFonts/Banks/default.sf2
+alias mplayer="mplayer -quiet -srate 44100 2&>/dev/null"
+alias apts='apt-cache show'
+alias aptc='apt-cache search'
+alias apti="apt-get install"
+alias aptu='apt-get update'
+alias aptdu='apt-get --show-upgraded dist-upgrade'
+alias aptar="apt-get autoremove"
+alias aptr="apt-get remove"
+alias s-instpkg="dpkg -l|grep"
+alias aptl='dpkg -L $1'
+
+alias cp='cp -iv'
+#alias fp='apt-cache pkgnames|sort|grep'
+alias md='mkdir --verbose'
+alias rd='rmdir --verbose'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ll='ls -hl --color|less -r'
+alias l='ls -1A|less -r'
+alias l.='ls .[a-zA-Z]* --color'
+#alias .='echo $PWD'
+alias li='mc -v '
+alias ls='clear; ls -CF --color'
+
+alias emacs='emacs -nw'
+alias cmake=colormake
+alias lexi='steak -de -nowait -clipboard'
+alias gm='ekiga-snapshot&'
+alias mycd='mount /cdrom'
+
+alias kphone='kphone.sh'
+
+alias mycdrw='mount /dev/pktcdvd0 /CD-RW -o rw,noatime'
+alias umycdrw='umount /CD-RW'
+alias umycd='umount /cdrom'
+alias ulb='cd /usr/local/bin'
+alias cdrom='cd /cdrom'
+alias us='cd /usr/src'
+alias us2='cd /usr/src2'
+alias etc='cd /etc'
+alias rea='li README'
+alias reai='li INSTALL'
+alias stop='shutdown -h now'
+alias mem=free
+alias lexi='steak -de'
+alias psl='ps -auxw | less'
+alias ..='cd ..'
+alias which='type -path'
+alias fm='mount -t auto /dev/fd0 /floppy'
+alias trommler='trommler 2&> trommler.log &'
+alias sflphone='/usr/local/bin/sflphone 2&> /tmp/sflphone.log&'
+alias ufm='umount /floppy'
+alias edit='emacs -nw'
+alias belt='belt --direction down --ontop true&'
+alias colorize='ccze'
+#tailmess () {   
+#if [ -z $DISPLAY ];then
+#       xterm -e tail -f /var/log/syslog|colorize &
+# else
+alias tailmess='clear;tail -f /var/log/syslog|ccze'
+#fi
+#}
+alias tailmy='xterm -bg steelblue4 -fg white -fn 10x20 -title "tma1 -> /var/log/mysql.log" -e tail -f /var/log/mysql/mysql.log &'
+
+alias tailsmb='clear;tail -f /usr/local/samba/var/log.smbd'
+
+#alias vbox='vbox -m tma2
+alias ver='uname -a'
+alias df='df -h'
+alias 'nt=nt --minimized'
+alias sx='startx&'
+
+alias xterm='xterm -ls -bg black -fg white -fn 10x20 -title "$XTITLE"'
+alias xterm2='ssh -v -f -X manfred@tma2 xterm -ls -bg black -fg white'
+alias xterm3='ssh -v -f -X manfred@tma3 xterm -ls -bg black -fg white -display tma1:0.0'
+
+alias mc='mc -c'
+alias camon='rcpwc load;sleep3;rcwebcam start'
+alias camoff='rcwebcam off; rcpwc unload'
+alias muse='muse -R -L'
+alias swc='webcam.sh on'
+alias stowc='webcam.sh off'
+alias lsf='sfxload -i $DEFAULTBANK'
+alias qac='qastrocam -b -dv /dev/video1'
+#alias grep=mg
+alias eterm='Eterm -F -adobe-courier-bold-r-normal--14-140-75-75-m-90-iso8859-1&' 
+
+alias xine='xine -f -g --no-splash -V Xv -A alsa "dvb://"&'
+
+alias vi='vim'
+#alias pmidi='pmidi -p 17:00'
+alias fluidsynth='fluidsynth -m alsa_seq'
+
+clear
+. ~/.functions
+
+#ifppp0
+source ~/.functions
+echo $(color bd white green)"Aliases and Functions"$(color)............... $(color red)"loaded!"$(color)
+echo ""
+echo ""
+when ci

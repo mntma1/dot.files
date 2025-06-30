@@ -1,0 +1,246 @@
+#!/bin/bash
+if [ -x /usr/bin/less ]; then
+   alias l='less -r'
+else
+   alias l='more'
+fi
+if [ ! -z $DISPLAY ]; then
+   if [ -x /usr/X11R6/xless ]; then
+      alias m='xless'
+   fi
+fi
+
+if [ ! -z $DISPLAY ]; then
+    TERM=xterm; export TERM
+  else
+    TERM=linux; export TERM
+fi
+
+# # functions
+alias xwd=snaps
+snaps () {
+if [ $# = "1" ];then
+/usr/bin/X11/xwd -frame| xwdtopnm | pnmtopng -compression 9 > /home/manfred/php/snaps/$1.png
+
+cat<<EOF
+ ______________________________________________________
+
+  http://tma1.darktech.org/~manfred/php/snaps/$1.png
+ ______________________________________________________
+
+EOF
+
+else
+cat<<EOF     
+ _____________________________________________
+            
+  "Usage: snaps [Filename without extension]"
+ _____________________________________________
+
+EOF
+fi
+}
+
+# Find a SongTitle from ~/.cddb
+ft ()	{ 
+	 TEXT="Found in file: ->  "
+	 if [ $# = "1" ];then 
+         echo
+	 	   echo -n $TEXT;egrep --colour=auto -H -r -w  "$1" /home/manfred/.cddb
+	 	   echo
+	  else
+cat<<EOF
+ _____________________________
+ 
+  "Usage: ft [quoted String]"
+ _____________________________
+
+EOF
+fi 
+}
+
+# copy an CD to CD-R or CD-RW
+cdcopy () { 
+sudo cdrdao copy --speed 8 -v2 -n --buffers 128 --device 0,1,0 --source-device 0,0,0 --source-driver generic-mmc;
+}
+
+# backup a directory on cd-rw
+mkcdr() {
+        if [ $# = "1" ]; then
+                sudo mkisofs -r $1 | cdrecord -v fs=6m speed=8 dev=/dev/hdd -
+         
+                else    echo "Usage: mkcdr <directory>"
+                fi      
+}
+# destroy the TOC from  a CD-RW
+alias blankcd='sudo cdrecord -v blank=fast dev=/dev/hdc'
+
+# burn a *.img or *.iso ... to CD-RW
+burn() {
+        if [ $# = "1" ]; then
+                sudo cdrecord -v  fs=8m speed=10 dev=/dev/sr1 $1
+         
+         else    echo "Usage: burn <ISO-File>"
+        fi
+}
+
+# burn a DVD.iso  to DVD-R(W)
+burndvd() {
+        if [ $# = "1" ]; then
+                growisofs -dvd-compat -Z /dev/dvdrw1=$1
+         
+         else    echo "Usage: burn <DVD-ISO-File>"
+        fi
+}
+# burn a audiofile to CD-RW
+burnaudio() {
+        if [ $# = "1" ]; then
+                   sudo cdrecord -v speed=1 dev=/dev/hdc -audio -pad -nofix $1
+         
+          else    echo "Usage: burnaudio <File.wav>"
+        fi
+}
+
+# burn a complete directory on the fly
+burnotf() {
+           if [ $# = "1" ]; then
+              sudo mkisofs  -r $1 | cdrecord -v fs=6m speed=8 dev=/dev/hdc -eject - 
+            else echo "Usage: burnotf </path/>"
+           fi
+}
+
+# show filenames if the user has changed directory 
+cd() {
+   builtin cd $1; ls
+}
+
+# search pkgNames
+fp() {
+      apt-cache pkgnames $1 | sort | less -ins ;
+}
+
+# WebcamShut  v=vader m=manfred 
+ss () {
+       T=$(date +"%Y-%m-%d-%H:%M:%S")
+       if [ $# -eq 0 ]; then
+             cp -av ~/www/webcam/webcam.jpeg ~/graphics/my-cam/manni-cam.$T.jpg
+             cp -av /home/vader/cam.jpg ~/graphics/vader-cam/anja-cam.$T.jpg
+       else
+          for i in $*; do
+              case $i in
+                   v|V) cp -av /home/vader/cam.jpg ~/graphics/vader-cam/vader-cam.$T.jpg
+                   ;;
+                   m|M) cp -av ~/www/webcam/webcam.jpeg ~/graphics/my-cam/manni-cam.$T.jpg
+                   ;;
+         esac
+      done
+      fi
+}
+
+# extract bzip2 compressed tar-file
+xbzip2() {
+   if [ $# = "1" ]; then   tar -j -xvf $1
+   else  echo "Usage: xbzip2 <filename>"
+   fi
+}
+
+# list the contents of bzip2 compressed tar-file
+lbzip2() {
+   if [ $# = "1" ]; then
+           tar -j -tf $1|less
+    else echo "Usage: lbzip2 <filename>"
+   fi
+}
+# extract gzip compressed tar-file
+xtgz() {
+   if [ $# = "1" ]; then   tar xvzpf $1
+   else  echo "Usage: xzip <filename>"
+   fi
+}
+
+# list contents of compressed tar-file
+ltgz() {
+   if [ $# = "1" ]; then
+           tar tzf $1|less
+    else echo "Usage: lszip <filename>"
+   fi
+}
+
+# search for file (default: beginning from current directory)
+ff() {
+   case $# in
+      1) find . -name "$1" -print;;
+      2) find $1 -name "$2" -print;;
+      *) echo "Usage: ff [<search_path>] <filename>";;
+   esac
+}
+
+# create a new directory and change to it
+nd() {
+   if [ $# = "1" ]; then
+       mkdir $1; cd $1
+       else  echo "Usage: nd <directory>"
+   fi
+}
+
+# search an adress 
+adress() {
+   if [ $# = "1" ]; then
+      clear;grep $1 ~/Adressen
+   else
+      echo "Usage: adress <name>"
+   fi
+}
+
+# write adress to a file
+wadr() {
+   if [ $# = "1" ]; then
+      echo "$1" >> ~/Adressen
+   else  echo "Usage: wadr <fname name tel street ....>"
+   fi
+}
+
+# scan networks
+netscan() {
+   if [ $# = "1" ]; then
+   sudo  nmap -v -O -sS -P 0 $1
+   else  echo "Usage: netscan <HOST>"
+   fi
+}
+
+# SFLPhone
+sflp() {
+   /usr/local/bin/sflphone 2&> /tmp/sflphone.log &
+   root-tail -g 400x255+10+430 \
+       -font fixed \
+       -wordwrap \
+       -minspace \
+       -color yellow \
+       /tmp/sflphone.log \
+       -noinitial 2&>/dev/null& 
+   syslog.sh restart
+     
+# syslog.sh start
+}
+
+ssh-purge ()
+{  
+   sed -i -e "$1d" ~/.ssh/known_hosts
+}
+
+# Virtual View 
+vv() {
+   if [ $# = "1" ]; then
+     virt-viewer -c qemu+tcp://root@192.168.17.48/system  $1 &>/dev/null 
+    else  echo "Usage: vv [vm-Gast]"
+   fi
+}
+
+echo ""
+#echo $(color bd white blue)"Functions"$(color)" loaded fine :-)"
+
+# Rechnen in der Shell
+alias calculator="octave -q"
+function calc () {
+echo "$1" | calculator;
+}

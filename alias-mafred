@@ -1,0 +1,140 @@
+#!/bin/bash
+# aliases for all shells
+
+PATH="$PA:/snap/bin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/manfred/bin:/usr/local/samba/bin:/usr/local/samba/sbin"
+DEFAULTBANK=~/UbuntuStudio/SoundFonts/Banks/default.sf2
+alias mplayer="mplayer  -AO alsa -srate 44100 -nojoystick -nolirc"
+alias apts='apt-cache show'
+alias aptc='apt-cache search'
+alias apti="sudo apt install"
+alias aptu='sudo apt update'
+alias aptdu='sudo apt-get --show-upgraded dist-upgrade'
+alias aptar="sudo apt autoremove"
+alias aptr="sudo apt remove"
+alias s-instpkg="dpkg -l|grep"
+alias aptl='dpkg -L $1'
+
+alias cp='cp -iv'
+#alias fp='apt-cache pkgnames|sort|grep'
+alias md='mkdir --verbose'
+alias rd='rmdir --verbose'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias ll='ls -hl --color|less -r'
+alias l='ls -1A|less -r'
+alias l.='ls .[a-zA-Z]* --color'
+#alias .='echo $PWD'
+alias li='mc -v '
+alias ls='clear; ls -CF --color'
+
+alias grep="grep --color=auto"
+
+alias emacs='emacs -nw'
+alias cmake=colormake
+alias lexi='steak -de -nowait -clipboard'
+alias gm='ekiga-snapshot&'
+alias mycd='sudo mount /cdrom'
+
+alias kphone='kphone.sh'
+
+alias mycdrw='sudo mount /dev/pktcdvd0 /CD-RW -o rw,noatime'
+alias umycdrw='sudo umount /CD-RW'
+alias umycd='sudo umount /cdrom'
+alias ulb='cd /usr/local/bin'
+alias cdrom='cd /cdrom'
+alias us='cd /usr/src'
+alias us2='cd /usr/src2'
+alias etc='cd /etc'
+alias rea='li README'
+alias reai='li INSTALL'
+alias 'free=free -h'
+alias mem=free
+alias lexi='steak -de'
+alias psl='ps -auxw | less'
+alias ..='cd ..'
+alias which='type -path'
+alias fm='mount -t auto /dev/fd0 /floppy'
+alias trommler='trommler 2&> trommler.log &'
+alias sflphone='/usr/local/bin/sflphone 2&> /tmp/sflphone.log&'
+alias ufm='umount /floppy'
+alias edit='emacs -nw'
+alias belt='belt --direction down --ontop true&'
+alias colorize='ccze'
+#tailmess () {   
+#if [ -z $DISPLAY ];then
+#       xterm -e sudo tail -f /var/log/syslog|colorize &
+# else
+alias tailmess='clear;sudo tail -f /var/log/syslog|ccze'
+alias tailmess1='clear;sudo tail -f /var/log/syslog-tma1.log|ccze'
+alias tailmess3='clear;sudo tail -f /var/log/syslog-tma3.log|ccze'
+alias tailmess4='clear;sudo tail -f /var/log/syslog-tma4.tma.local.log|ccze'
+alias tailmess5='clear;sudo tail -f /var/log/syslog-tma5.log|ccze'
+alias tailmess6='clear;sudo tail -f /var/log/syslog-tma6.log|ccze'
+#fi
+#}
+alias tailmy='xterm -bg steelblue4 -fg white -fn 10x20 -title "tma1 -> /var/log/mysql.log" -e sudo tail -f /var/log/mysql/mysql.log &'
+
+alias tailsmb='clear;sudo tail -f /usr/local/samba/var/log.smbd'
+
+#alias vbox='vbox -m tma2
+alias ver='uname -a'
+alias df='df -h'
+alias nxtvepg="nxtvepg -dbdir ~/nxtvdb"
+alias stapwc="rcpwc start"
+alias stopwc="rcpwc stop"
+alias stacamserv="sudo rccamserv start"
+alias stocamserv="sudo rccamserv stop"
+alias motv='sudo modprobe bttv; motv'
+alias stop1='sudo halt'
+alias stop2='ssh  manfred@tma2 sudo halt'
+alias stop3='ssh  manfred@tma3 sudo halt'
+alias vwcshot='cp -av /home/vader/cam.jpg ~/tmp/vader.wc-shot.`date +"%Y-%m-%d-%H:%M:%S".jpg`'
+alias mwcshot='cp -av /var/www/webcam/webcam.jpeg ~/tmp/manfred.wc-shot.`date +"%Y-%m-%d-%H:%M:%S".jpg`'
+alias 'nt=nt --minimized'
+alias sexec2="ssh -f -X manfred@tma2"
+alias sexec3="ssh -f -X manfred@tma3"
+#alias sx='stx'
+alias sx='startx&'
+
+alias xterm='xterm -ls -bg black -fg white -fn 10x20 -title "$XTITLE"'
+alias xterm2='ssh -v -f -X manfred@tma2 xterm -ls -bg black -fg white'
+alias xterm3='ssh -v -f -X manfred@tma3 xterm -ls -bg black -fg white -display tma1:0.0'
+
+alias mc='mc -c'
+alias camon='rcpwc load;sleep3;rcwebcam start'
+alias camoff='rcwebcam off; rcpwc unload'
+alias muse='muse -R -L'
+alias swc='webcam.sh on'
+alias stowc='webcam.sh off'
+alias lsf='sfxload -i $DEFAULTBANK'
+alias qac='qastrocam -b -dv /dev/video1'
+#alias grep=mg
+alias eterm='Eterm -F -adobe-courier-bold-r-normal--14-140-75-75-m-90-iso8859-1&' 
+
+#alias xine='xine -f -g --no-splash -V Xv -A alsa "dvb://"&'
+
+alias stopall='ssh tma3 sudo halt; sudo halt'
+
+alias btsco='btsco -r -f 00:07:A4:0C:E6:04' #Jabra BT 250
+#alias btsco='btsco -r -f 00:13:1B:01:4C:1A' # b-Speech Calypso
+
+#alias btsco='sudo hciconfig hci0 voice 0x0060; btsco -r -f 00:07:A4:0C:E6:04' #Jabbre
+#alias btsco='sudo hciconfig hci0 voice 0x0060; btsco -r -f 00:13:1B:01:4C:1A' # Calypso
+
+alias vi='vim'
+#alias pmidi='pmidi -p 17:00'
+alias fluidsynth='fluidsynth -m alsa_seq'
+#alias evince="FoxitReader"
+clear
+. ~/.functions
+
+#ifppp0
+cd ~
+source ~/.functions
+#echo $(color bd white green)"Aliases and Functions"$(color)............... $(color red)"loaded!"$(color)
+#echo ""
+#echo ""
+#when ci
+#xset s off
+#xset s noblank
+#linuxlogo -f
