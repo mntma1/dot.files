@@ -7,5 +7,4 @@ bashrc-manfred
 color*
 functions
 prompt.sh
-README.md
 ```
