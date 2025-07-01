@@ -7,4 +7,5 @@ bashrc-manfred
 color*
 functions
 prompt.sh
+tmux.conf
 ```
