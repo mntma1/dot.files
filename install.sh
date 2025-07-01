@@ -19,5 +19,5 @@ cd ~/
 echo
 echo ....fertig
 echo 
-tmux
+#tmux
 exit 0
