@@ -7,6 +7,7 @@ cp -av dot.tmux ~/.tmux
 cp -fv alias-mafred ~/.alias
 cp -fv bashrc-manfred ~/.bashrc
 cp -fv functions ~/.functions
+cp -fv dot.screenrc ~/.screenrc
 cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
 #sudo cp -v functions /root/.functions
