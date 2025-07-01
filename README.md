@@ -1,5 +1,14 @@
 # Dot.Files for configuring the system
 
+1. Das Repository klonen
+```
+git clone https://github.com/mntma1/dot.files.git
+```
+2. Dann das install.sh abfeuern
+```
+cd dot.files && ./install.sh
+```
+3. Oder die Dateien von Hand kopieren
 ```
 alias-mafred      -> ~/.alias for all user
 alias-root        -> /root/.alias 
@@ -8,10 +17,10 @@ color*            -> sudo install color /usr/local/bin
 functions         -> ~/.functions
 prompt.sh         -> Creates the prompt (Is included in bashrc-manfred)
 tmux.conf         -> ~/.tmux.conf
-dot.tmux.tgz      -> Directory ~/.tmux for all user 
+dot.tmux.tgz      -> tar xvzf dot.tmux.tgz
 dot.tmux-session  -> -/.tmux-session for all user
 ```
-
+3.1 Verzeichnis von Hand kopieren
 ```
-cp [filname-xx] ~/.[filename]  Example: cp alias-manfred ~/.alias
+cp -av dot.tmux ~/.tmux
 ```
