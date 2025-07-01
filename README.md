@@ -1,4 +1,4 @@
-# Dot.Files zum konfigurieren des Systems
+# Dot.Files for configuring the system
 
 ```
 alias-mafred      -> ~/.alias for all user
