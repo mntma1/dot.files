@@ -1,0 +1,15 @@
+omv.tma1.duckdns.org {
+    reverse_proxy 192.168.17.105:81
+}
+
+jellyfin.tma1.duckdns.org {
+    reverse_proxy 192.168.17.105:8096
+}
+apachegua.tma1.duckdns.org {
+    reverse_proxy 192.168.17.105:8081
+}
+
+#cloud.tma1.duckdns.org {
+#    reverse_proxy 192.168.17.127:443
+#}
+
