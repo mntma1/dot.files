@@ -20,13 +20,13 @@ tmux.conf         -> ~/.tmux.conf
 dot.tmux.tgz      -> tar xvzf dot.tmux.tgz
 dot.tmux-session  -> -/.tmux-session for all user
 ```
-**Docker Caddy**
-```
-cp compose-files /oot/Caddy && cd /oot/Caddy 
- compose-caddy.yaml -> docker compose -f compose-caddy.yaml up -d
- compose-http-server.yaml docker compose -f compose-http-server.yaml up -d
-```
-3.1 Verzeichnis von Hand kopieren
+3.1 Oder das Verzeichnis von Hand kopieren
 ```
 cp -av dot.tmux ~/.tmux
+```
+**Docker Caddy**
+```
+cp -v compose-* /opt/Caddy && cd /opt/Caddy 
+ compose-caddy.yaml -> docker compose -f compose-caddy.yaml up -d
+ compose-http-server.yaml docker compose -f compose-http-server.yaml up -d
 ```
