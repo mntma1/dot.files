@@ -19,6 +19,7 @@ prompt.sh         -> Creates the prompt (Is included in bashrc-manfred)
 tmux.conf         -> ~/.tmux.conf
 dot.tmux.tgz      -> tar xvzf dot.tmux.tgz
 dot.tmux-session  -> -/.tmux-session for all user
+compose-caddy.yaml -> docker compose -f compose-caddy.yaml up -d
 ```
 3.1 Verzeichnis von Hand kopieren
 ```
