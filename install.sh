@@ -16,7 +16,7 @@ cp -fv dot.tmux-session ~/.tmux-session
 #sudo cp -v tmux.conf ~/root/.tmux.conf
 #sudo install color /usr/local/bin
 source ~/.bashrc
-cd ~/
+cd ~
 echo
 echo ....fertig
 echo 
