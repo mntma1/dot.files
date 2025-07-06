@@ -14,7 +14,6 @@ cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
 source ~/.bashrc
 cd ~
-sleep 5
 cat<<EOF
 
 $(color white red)....Bitte warten$(color)
@@ -25,6 +24,7 @@ EOF
 #sudo install tmux -y
 #tmux
 
+sleep 5
 clear;cat<<EOF
 
 Du bist User: $(color white blue blink) $USER $(color)
