@@ -3,7 +3,9 @@
 # for examples
 # Extended by Manfred N
 
-export PATH='/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/samba/bin:/usr/local/samba/sbin;/home/manfred/bin;/snap/spotify/current/usr/bin'
+
+
+export PATH='/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/samba/bin:/usr/local/samba/sbin;/home/$USER/bin;/snap/spotify/current/usr/bin'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -105,12 +107,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#PATH="/home/manfred/perl5/bin${PATH+:}${PATH}"; export PATH;
-#PERL5LIB="/home/manfred/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/home/manfred/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/home/manfred/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/home/manfred/perl5"; export PERL_MM_OPT;
-
 # Enable ioBroker command auto-completion
 #source ~/.iobroker/iobroker_completions
 
@@ -148,23 +144,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-#PATH="/home/manfred/perl5/bin${PATH+:}${PATH}"; export PATH;
-#PERL5LIB="/home/manfred/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/home/manfred/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/home/manfred/perl5\""; export PERL_MB_OPT;
-#source ~/.iobroker/npm_command_fix
-
-### Send a  Status Message via WhatsApp Bot
-#curl 'https://api.callmebot.com/whatsapp.php?phone=4915752868823&text=Host:+*TMA8+is*+UP+now&apikey=3847716'
-#### Send a  Status Message to Gotify 
-#curl "http://192.168.17.115:5001/message?token=Aiv0dX1yQ1z-WVV" -F "title=Host: $HOSTNAME" -F "message=is UP  $(date)" -F "priority=5"
-####################################
-# Run Nextclound sync Desktop
-#->flatpak run com.nextcloud.desktopclient.nextcloud&
-
-#PS1="\n \A - \u@\h: [ \w] \n \$:"
-#PS1="\n \[\e[33m\]\A \[\e[00m\]- \[\e[32m\]\u@\h: \[\e[00m\][ \w] \n \$: => "
 
 PROMPT_COMMAND='PS1_CMD1=$(ip route get 1.1.1.1 | awk -F"src " '"'"'NR == 1{ split($2, a," ");print a[1]}'"'"')';
 PS1='\n \[\e[33m\]\d\[\e[00m\]\[\e[91m\] \t\[\e[00m\] \H\[\e[32m\] IP: ${PS1_CMD1}\[\e[00m\] \n [ \w ]\n \[\e[96;1m\]\u:\$ \[\e[0m\] ';
