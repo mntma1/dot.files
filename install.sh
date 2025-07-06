@@ -29,8 +29,7 @@ clear;cat<<EOF
 
 Du bist User: $(color white blue blink) $USER $(color)
 
-Wenn "root" auch in den Genuß dieiser Umgebung kommen soll,
-dann feuer folgende Befehle ab:
+Wenn "root" auch in den Genuß dieser Umgebung kommen soll ,dann feuer folgende Befehle ab:
 
  sudo cp -av dot.tmux /root/.tmux
  sudo cp -fv functions /root/.functions
