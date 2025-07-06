@@ -24,9 +24,4 @@ dot.tmux-session  -> -/.tmux-session for all user
 ```
 cp -av dot.tmux ~/.tmux
 ```
-**Docker Caddy**
-```
-cp -v compose-* /opt/Caddy && cd /opt/Caddy 
- compose-caddy.yaml -> docker compose -f compose-caddy.yaml up -d
- compose-http-server.yaml docker compose -f compose-http-server.yaml up -d
-```
+
