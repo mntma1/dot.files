@@ -14,15 +14,20 @@ cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
 source ~/.bashrc
 cd ~
-cat<<EOF
 sleep 5
+cat<<EOF
+
 $(color white red)....Bitte warten$(color)
+
 EOF
+
 #echo "$(color green)Gib hier dein Passwort ein!$(color)"
 #sudo install tmux -y
 #tmux
+
 clear;cat<<EOF
-Du bist User: $(color white blue)$USER§(color)
+
+Du bist User: $(color white blue blink) $USER $(color)
 
 Wenn "root" auch in den Genuß dieiser Umgebung kommen soll,
 dann feuer folgende Befehle ab:
@@ -37,6 +42,7 @@ dann feuer folgende Befehle ab:
 Viel Spaß
 Gruß Manfred
 EOF
+
 echo
 echo "$(color cyan)Alles erledigt!$(color)"
 exit 0
