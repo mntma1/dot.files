@@ -36,7 +36,7 @@ Wenn "root" auch in den Genuß dieser Umgebung kommen soll ,dann feuer folgende 
  sudo cp -fv alias-root /root/.alias
  sudo cp -fv dot.tmux-session /root/.tmux-session
  sudo cp -fv tmux.conf ~/root/.tmux.conf
- sudo install tmux -y
+ sudo apt install tmux -y
 
 Viel Spaß
 Gruß Manfred
