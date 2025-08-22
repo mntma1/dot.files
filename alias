@@ -138,3 +138,5 @@ source ~/.functions
 #xset s off
 #xset s noblank
 #linuxlogo -f
+echo ""
+echo "Deine IP-Adresse: ist:" $(color bold blink white red )$(ip addr show br0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)$(color)
