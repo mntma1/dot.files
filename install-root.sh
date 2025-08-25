@@ -2,6 +2,7 @@
 # Crerated: by Manfred 
 # Date: 06.07.2025
 
+install color /usr/local/bin
 tar xvzf dot.tmux.tgz
 cp -av dot.tmux ~/.tmux
 cp -fv alias-root ~/.alias
@@ -11,7 +12,13 @@ cp -fv dot.screenrc ~/.screenrc
 cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
 
-sleep 5
+apt install vim net-tools mc htop ccze ncdu tmux sreen -y
 
-cd 
-source ~/.bashrc
+sleep 3
+clear
+cat<<ende
+
+$(color cyan)....Fertig$(color)
+
+ende
+exit 0
