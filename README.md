@@ -1,4 +1,9 @@
-# Einrichtung der "Tmux" Umgebung inkl. Alias u. Prompt
+# Einrichtung der "Bash" Umgebung inkl. Tmux, Aliases u. den Prompt(PS1=)
+
+PS1 ='\n \[\e[33m\]\d\[\e[00m\]\[\e[91m\] \t\[\e[00m\] \H\[\e[32m\] IP: ${PS1_CMD1}\[\e[00m\] \n [ \w ]\n \[\e[96;1m\]\u:\$ \[\e[0m\]';
+
+:-)
+
 ![tmux-hase.png](./tmux-hase.png)
 
 1. Als Root oder User: Das Repository klonen
@@ -15,24 +20,6 @@ cd dot.files && ./install-root.sh
 2.2 Als User
 ```
 cd dot.files && ./install.sh
-```
-3. Oder die Dateien von Hand kopieren
-```
-alias-root -> /root/.alias
-function   -> /root/.function
-
-alias             -> ~/.alias for all users
-bashrc            -> ~/.bashrc for all users 
-color*            -> sudo install color /usr/local/bin
-functions         -> ~/.functions for all user
-prompt.sh         -> Creates the prompt (Is included in bashrc-manfred)
-tmux.conf         -> ~/.tmux.conf
-dot.tmux.tgz      -> tar xvzf dot.tmux.tgz
-dot.tmux-session  -> -/.tmux-session for all user
-```
-3.1 Oder das Verzeichnis von Hand kopieren
-```
-cp -av dot.tmux ~/.tmux
 ```
 
 
