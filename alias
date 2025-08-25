@@ -1,5 +1,6 @@
 #!/bin/bash
 # aliases for all shells
+# Modified by Manfred
 
 PATH="$PA:/snap/bin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/manfred/bin:/usr/local/samba/bin:/usr/local/samba/sbin"
 DEFAULTBANK=~/UbuntuStudio/SoundFonts/Banks/default.sf2
@@ -138,5 +139,5 @@ source ~/.functions
 #xset s off
 #xset s noblank
 #linuxlogo -f
-echo ""
-echo https://$(hostname -I | awk '{print $1}' | cut -d/ -f1):8080
+echo "" #
+echo https://$(hostname -I | awk '{print $1}' | cut -d/ -f1):8080 # Only for testing
