@@ -33,7 +33,7 @@ EOF
 
 cat<<ende
 
-....."$(color cyan)Alles erledigt!$(color)"
+....."$(color cyan)Alles erledigt(color)"
 
 ende
 exit 0
