@@ -140,4 +140,4 @@ source ~/.functions
 #xset s noblank
 #linuxlogo -f
 echo "" #
-echo https://$(hostname -I | awk '{print $1}' | cut -d/ -f1):8080 # Only for testing
+#echo https://$(hostname -I | awk '{print $1}' | cut -d/ -f1):8080 # Only for testing
