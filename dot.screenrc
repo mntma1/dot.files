@@ -130,15 +130,11 @@ bind ^] paste [.]
 # Default Sessions
 # Edited by Manfred
 ###################
-screen -t nuc01         8 ssh manfred@nuc01
-screen -t ns-3          7 ssh manfred@ns-3
-screen -t ns-2          6 ssh manfred@ns-2
-screen -t pve02         5 ssh root@pve02
-screen -t homeassistant 4 ssh root@homeassistant
-screen -t opencloud-2   3 ssh manfred@opencloud
-screen -t opencloud-1   2 ssh manfred@opencloud
-screen -t omv-jellyfin  1 ssh manfred@omv-jellyfin
-screen -t tma8          0 bash -l
+
+#screen -t [HOSTNAME-2]  3 ssh User@Host
+#screen -t [HOSTNAME-1]  2 ssh manfred@Host
+screen -t localhost-2    1 zsh -l
+screen -t localhost-1    0 bash -l
 
 caption always "%3n %t%? @%u%?%? [%h]%?"
 # hardstatus alwaysignore
