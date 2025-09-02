@@ -1,4 +1,4 @@
-# Einrichtung der "Bash" Umgebung inkl. Tmux, Aliases u. den Prompt(PS1=)
+# Einrichtung der "Bash" Umgebung inkl. Tmux, Aliases und dem Prompt(PS1=)
 
 PS1 ='\n \[\e[33m\]\d\[\e[00m\]\[\e[91m\] \t\[\e[00m\] \H\[\e[32m\] IP: ${PS1_CMD1}\[\e[00m\] \n [ \w ]\n \[\e[96;1m\]\u:\$ \[\e[0m\]';
 
