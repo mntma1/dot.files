@@ -12,7 +12,7 @@ cp -fv dot.screenrc ~/.screenrc
 cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
 
-#apt install vim net-tools dnsutils mc htop ccze nqcdu tmux screen -y
+#apt install vim net-tools dnsutils mc htop ccze ncdu tmux screen -y
 
 sleep 3
 clear
