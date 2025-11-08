@@ -119,24 +119,6 @@ fp() {
       apt-cache pkgnames $1 | sort | less -ins ;
 }
 
-# WebcamShut  v=vader m=manfred 
-ss () {
-       T=$(date +"%Y-%m-%d-%H:%M:%S")
-       if [ $# -eq 0 ]; then
-             cp -av ~/www/webcam/webcam.jpeg ~/graphics/my-cam/manni-cam.$T.jpg
-             cp -av /home/vader/cam.jpg ~/graphics/vader-cam/anja-cam.$T.jpg
-       else
-          for i in $*; do
-              case $i in
-                   v|V) cp -av /home/vader/cam.jpg ~/graphics/vader-cam/vader-cam.$T.jpg
-                   ;;
-                   m|M) cp -av ~/www/webcam/webcam.jpeg ~/graphics/my-cam/manni-cam.$T.jpg
-                   ;;
-         esac
-      done
-      fi
-}
-
 # extract bzip2 compressed tar-file
 xbzip2() {
    if [ $# = "1" ]; then   tar -j -xvf $1
