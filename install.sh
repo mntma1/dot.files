@@ -11,6 +11,7 @@ cp -fv functions ~/.functions
 cp -fv dot.screenrc ~/.screenrc
 cp -fv tmux.conf ~/.tmux.conf
 cp -fv dot.tmux-session ~/.tmux-session
+cp -fv dot.xsession ~/.xsession
 
 clear;cat<<EOF
 
