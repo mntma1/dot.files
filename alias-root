@@ -101,8 +101,9 @@ clear
 #ifppp0
 source ~/.functions
 #echo $(color bd white green)"Aliases and Functions"$(color)............... $(color red)"loaded!"$(color)
-echo ""
-echo ""
+#echo ""
+#echo ""
 #when ci
+ls
 echo ""
 #echo https://$(hostname -I | awk '{print $1}' | cut -d/ -f1):8080 # Only for testing 
