@@ -3,7 +3,7 @@
 # Date: 06.07.2025
 
 clear;
-apt install vim kate xrdp net-tools dnsutils htop mc ccze gdebi ncdu -y
+#apt install vim xrdp net-tools dnsutils htop mc ccze gdebi ncdu -y
 install color /usr/local/bin
 tar xvzf dot.tmux.tgz
 cp -av dot.tmux ~/.tmux
