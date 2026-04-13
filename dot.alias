@@ -71,8 +71,5 @@ alias mkpass="openssl rand -hex 32"
 #alias evince="FoxitReader"
 
 clear
-. ~/.functions
-
-#ifppp0
 cd ~
 source ~/.functions
