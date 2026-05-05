@@ -23,5 +23,11 @@ cd dot.files && ./install-root.sh
 [Strg]+D
 cd dot.files && ./install.sh
 ```
+3. Die .bashrc neu laden oder ein neues Terminal offnen
+```
+source ~/.bashrc
+```
+Nu isses Bunt :-)
+
 
 
