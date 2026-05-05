@@ -14,11 +14,13 @@ git clone https://github.com/mntma1/dot.files.git
 
 2.1 Als Root
 ```
+sudo bash
 cd dot.files && ./install-root.sh
 ```
 
 2.2 Als User
 ```
+[Strg]+D
 cd dot.files && ./install.sh
 ```
 
