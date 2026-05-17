@@ -6,7 +6,7 @@ PS1 ='\n \[\e[33m\]\d\[\e[00m\]\[\e[91m\] \t\[\e[00m\] \H\[\e[32m\] IP: ${PS1_CM
 
 ![tmux-hase.png](./tmux-hase.png)
 
-1. Als Root oder User: Das Repository klonen
+1. Als User: Das Repository klonen
 ```
 git clone https://github.com/mntma1/dot.files.git
 ```
@@ -16,11 +16,11 @@ git clone https://github.com/mntma1/dot.files.git
 ```
 sudo bash
 cd dot.files && ./install-root.sh
+[Strg]+D
 ```
 
 2.2 Als User
 ```
-[Strg]+D
 cd dot.files && ./install.sh
 ```
 3. Die .bashrc neu laden oder ein neues Terminal offnen
