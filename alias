@@ -7,7 +7,7 @@ DEFAULTBANK=~/UbuntuStudio/SoundFonts/Banks/default.sf2
 alias mplayer="mplayer  -AO alsa -srate 44100 -nojoystick -nolirc"
 # Aliases for: apt, dpkg 
 alias apts='clear;apt-cache show'
-alias aptc='apt-cache search'
+alias aptc='sudo apt clean'
 alias apti="sudo apt install"
 alias aptu='sudo apt update'
 alias aptdu='sudo apt-get --show-upgraded dist-upgrade'
